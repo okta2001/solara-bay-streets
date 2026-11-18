@@ -1,61 +1,35 @@
-// Every tuning number and colour in one place. The playfield is a fixed 1280x720 logical area;
-// the renderer scales it to the window, so no rule below depends on the screen size.
-
-export const FIELD = { width: 1280, height: 720, groundY: 664 };
-
-/** The simulation's fixed step, in seconds: 60 updates a second whatever the display's rate. */
-export const STEP = 1 / 60;
-
-export const PLAYER = {
-  width: 72,
-  height: 24,
-  speed: 560,
-  invulnerable: 1.5,
-};
-
-export const LIVES = 3;
-
-export const BLOCK = {
-  minWidth: 40,
-  maxWidth: 110,
-  height: 36,
-  speed: 240,
-  speedPerLevel: 30,
-  speedJitter: 90,
-  interval: 0.55,
-  intervalScale: 0.88,
-  minInterval: 0.14,
-  dodgePoints: 1,
-};
-
-export const COIN = {
-  size: 24,
-  speed: 190,
-  speedPerLevel: 14,
-  interval: 1.4,
-  intervalJitter: 0.8,
-  points: 10,
-};
-
-/** Seconds of play per level, and the last level: speeds and spawn rates stop growing there. */
-export const LEVEL = { seconds: 12, max: 12 };
-
-/** How many falling things can exist at once; the pool is allocated once, at boot. */
-export const POOL_SIZE = 64;
-
-export const PALETTE = {
-  backdrop: '#11141b',
-  sky: '#1b1f2a',
-  ground: '#2a3040',
-  player: '#4fc3f7',
-  block: '#e5534b',
-  coin: '#f2c94c',
-  panel: '#252b38',
-  text: '#eef1f5',
-  muted: '#8b93a3',
-};
-
-export const FONT = 'system-ui, -apple-system, "Segoe UI", sans-serif';
-
-/** Where the best score is kept between visits (this browser only). */
-export const BEST_KEY = 'block-dodger.best';
+// Solara Bay Streets - configuration and name data
+export const BLOCK = 320;
+export const ROAD = 96;
+export const CITY_COLS = 10;
+export const CITY_ROWS = 8;
+export const WORLD_W = CITY_COLS * BLOCK;
+export const WORLD_H = CITY_ROWS * BLOCK;
+export const SAVE_KEY = 'solara-bay-streets-save-v1';
+export const DISTRICTS = [
+  { name: 'Marina', color: '#2ec4b6' },
+  { name: 'Old Market', color: '#e9c46a' },
+  { name: 'Palms District', color: '#7bc950' },
+  { name: 'Portside', color: '#5a7d9a' },
+  { name: 'Downtown', color: '#c77dab' },
+  { name: 'Coral Heights', color: '#f4a261' },
+];
+export const CAR_COLORS = ['#e63946','#f1fa8c','#457b9d','#2a9d8f','#e9c46a','#9b5de5','#f15bb5','#00bbf9','#fee440','#8ac926','#ff595e','#6a4c93','#ffffff','#222222','#ff8c42'];
+export const CAR_TYPES = [
+  { name: 'Sedan', w: 44, h: 22, maxSpeed: 260, accel: 220 },
+  { name: 'Hatch', w: 40, h: 20, maxSpeed: 230, accel: 200 },
+  { name: 'Sport', w: 46, h: 21, maxSpeed: 360, accel: 320 },
+  { name: 'Taxi', w: 44, h: 22, maxSpeed: 250, accel: 210 },
+  { name: 'Van', w: 50, h: 24, maxSpeed: 210, accel: 170 },
+];
+export const PED_NAMES = ['Ana','Leo','Mia','Jon','Sofia','Marco','Lena','Omar','Nina','Pablo','Ivy','Dario'];
+export const STORY_INTRO = 'Ren Calloway, a courier who knows every shortcut in Solara Bay, owes fixer Mara Voss one last favour. Five jobs. No questions. Get paid, get out — if the city lets you.';
+export const CONTROLS_TEXT = [
+  'WASD / Arrows — move / drive',
+  'Shift — sprint',
+  'E — enter / exit car',
+  'Space — handbrake drift',
+  'Mouse — aim pistol, Click — shoot',
+  'F — melee attack',
+  'Esc / P — pause,  M — mute',
+];
